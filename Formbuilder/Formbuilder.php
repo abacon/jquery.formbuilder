@@ -216,13 +216,16 @@ class Formbuilder {
 					}
 					$xml .= '</field>'."\n";
 				}
-			}
+				
+				// comment
+				if ($field['class'] == "comment"){
+					$xml .= sprintf('<p>%s</p>', $field['values']);
+				}
 		}
 
 		$xml .= '</form>'."\n";
-
 		return $xml;
-
+		}
 	}
 
 	/**
@@ -311,7 +314,7 @@ class Formbuilder {
 
 
 	/**
-	 * Parses the POST data for the results of the speific form values. Checks
+	 * Parses the POST data for the results of the specific form values. Checks
 	 * for required fields and returns an array of any errors.
 	 *
 	 * @access public
