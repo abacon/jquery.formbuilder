@@ -365,7 +365,7 @@
 					li += '<strong id="txt-title-' + last_id + '">' + title + '</strong></div>';
 					li += '<div id="frm-' + last_id + '-fld" class="frm-holder">';
 					li += '<div class="frm-elements">';
-					if (required) {
+					if (field_type != "comment") {
 						li += '<div class="frm-fld"><label for="required-' + last_id + '">' + opts.messages.required + '</label>';
 						li += '<input class="required" type="checkbox" value="1" name="required-' + last_id + '" id="required-' + last_id + '"' + (required ? ' checked="checked"' : '') + ' /></div>';
 					}
